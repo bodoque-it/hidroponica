@@ -47,4 +47,17 @@ Para mejorar el trabajo,orden y profesionalismo,usaremos feature branch
 - usar nombres convenientes para sus ramas idealmente para que entienda el componente que se tocara o colocar un id
 
 - antes de pushiar testiar de la mejor manera posible
- 
+
+# CI y CD
+
+Para ello utilizaremos 
+- Trivis CI
+- Heroku
+
+### Proceso
+- Una vez testiada una feature o una rama de cambios esta sera integrada a la rama master y se hara un push de estos cambios.
+- Travis Ci lanza un trigger configurado por este para recoger cada commit  nuevo en la rama master y hacer un build y correr los test automatizados
+- Si los build estan correctos se configurara una trigger de Travis para enviar todo los cambios nuevos al deployment ejecutado en Heroku
+> **Nota importante** No pushiar deliveradamente a la rama master , recordar el workflow, si se necesita trabajar entre dos en un feat es mejor subir la rama a github y luego integrarla cuando este terminada 
+
+![Proceso CI/CD](cicd.png "Proceso CI/CD")
